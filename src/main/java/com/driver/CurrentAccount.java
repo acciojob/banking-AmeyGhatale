@@ -34,7 +34,7 @@ public class CurrentAccount extends BankAccount{
         }
 
         for(Character ch : license.keySet()){
-            if(license.get(ch) >= n)
+            if(license.get(ch) > n)
                 return false;
         }
         return true;
