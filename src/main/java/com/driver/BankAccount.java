@@ -29,7 +29,7 @@ public class BankAccount {
                 sum -= x;
                 ans.append(x);
                 digits--;
-                break;
+//                break;
             }
         }
 
