@@ -18,7 +18,7 @@ public class SavingsAccount extends BankAccount{
         double sum = getBalance() - amount;
 
         if (amount > maxWithdrawalLimit)
-            throw new Exception("Maximum Withdraw Limit Exceed");
+            throw new Exception("Maximum Withdraw Limit Exceeded");
         else  if (sum<0)
             throw new Exception("Insufficient Balance");
         else
@@ -27,13 +27,18 @@ public class SavingsAccount extends BankAccount{
 
     public double getSimpleInterest(int years){
         // Return the final amount considering that bank gives simple interest on current amount
-        return getBalance()*(1+(rate*years)/100);
+        double si=getBalance()*(1+(rate*years)/100);
+        return si;
+
     }
 
     public double getCompoundInterest(int times, int years){
         // Return the final amount considering that bank gives compound interest on current amount given times per year
-        return getBalance()*Math.pow(1+rate/(100/times),(times*years));
+
+        double ans=getBalance()*Math.pow(1+rate/(100*times),years*times);
+        return ans;
     }
+
 
 
     public double getRate() {
