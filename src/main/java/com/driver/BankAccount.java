@@ -48,6 +48,8 @@ public class BankAccount {
         // Remember to throw "Insufficient Balance" exception, if the remaining amount would be less than minimum balance
         double sum = this.balance - amount;
 
+        if (sum<minBalance)
+            throw new Exception("Maximum Withdraw Limit Exceed");
         if(sum<0)
             throw new Exception("Insufficient Balance" );
 
